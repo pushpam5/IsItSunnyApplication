@@ -161,7 +161,7 @@ class _PreferencesState extends State<Preferences> {
                   else if(_selectedCities.length > 3){
                     displayDialog(
                       context,
-                      "Atmost Three Cities Are Allowed",
+                      "Sorry,Atmost Three Cities Allowed",
                       "Please Select Atmost Three Cities",
                       barrierDisbarrierDismissible: true,
                     );
