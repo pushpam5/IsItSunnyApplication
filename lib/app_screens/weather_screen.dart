@@ -24,7 +24,6 @@ class _WeatherState extends State<Weather> {
 
   Future<WeatherReport> getWeather(String city) async {
     String url = "$serverUrl/userWeatherData/?city=$city";
-    print(url);
     try {
       http.Response resp =
       await http.get(url, headers: {"Content-Type": "application/json"});
@@ -36,7 +35,6 @@ class _WeatherState extends State<Weather> {
             responseData[0]['weather']['temp_max'] - 273.00,
             responseData[0]['weather']['temp_min'] - 273.00,
             responseData[0]['weather']['description']);
-        print(data);
         return data;
       } else {
         displayDialog(context, "Error Occured", "Please Try Again",
@@ -81,6 +79,7 @@ class _WeatherState extends State<Weather> {
                 valueColor: AlwaysStoppedAnimation<Color>(
                   Theme
                       .of(context)
+
                       .primaryColor,
                 ),
               ),
@@ -192,10 +191,11 @@ class _WeatherState extends State<Weather> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
+                            SizedBox(height: 20,),
                             Container(
                                 height: 100,
                                 child: Image.asset(
-                                  snapShot.data.temperature.round() < 15 ?
+                                  snapShot.data.temperature.round() <= 15 ?
                                   './assets/images/snowflake.png' : snapShot
                                       .data.temperature.round() < 30
                                       ? './assets/images/cloudy.png':data.temperature.round() < 35 ?'./assets/images/sun.png':'./assets/images/sunny.png',

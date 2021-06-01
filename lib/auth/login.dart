@@ -171,7 +171,6 @@ class _LoginState extends State<Login> {
                             return null;
                           },
                           onChanged: (value) {
-//                            print(password);
                             password = value.trimLeft().trimRight();
                           },
                         ),

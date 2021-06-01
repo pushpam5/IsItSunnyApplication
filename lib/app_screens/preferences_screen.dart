@@ -136,7 +136,6 @@ class _PreferencesState extends State<Preferences> {
                                 else{
                                   _selectedCities.remove(city.toLowerCase());
                                 }
-                                print(_selectedCities);
                                 setState(() {
                                   cities[city] = value;
                                 });

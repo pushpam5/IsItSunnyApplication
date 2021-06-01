@@ -21,7 +21,6 @@ class _CityListState extends State<CityList> {
 
     var url = "$serverUrl/updateWeatherData";
     var resp = await http.get(url,headers: {"Content-Type": "application/json"});
-    print(resp.body);
 
   }
 
