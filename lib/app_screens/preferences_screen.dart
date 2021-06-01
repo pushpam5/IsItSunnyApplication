@@ -158,6 +158,14 @@ class _PreferencesState extends State<Preferences> {
                       barrierDisbarrierDismissible: true,
                     );
                   }
+                  else if(_selectedCities.length > 3){
+                    displayDialog(
+                      context,
+                      "Atmost Three Cities Are Allowed",
+                      "Please Select Atmost Three Cities",
+                      barrierDisbarrierDismissible: true,
+                    );
+                  }
                   else{
                   var resp = await setPreferences(username);
                     if (resp == "null") {
